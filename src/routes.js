@@ -9,9 +9,6 @@ routes.get('/devs', DevController.index);
 routes.post('/devs', DevController.store);
 routes.get('/search', SearchController.index);
 
-routes.delete('/devs/:id', (request, response) => {
-  console.log(request.body);
-  return response.json({ message: 'apagar usuário'})
-});
+routes.delete('/devs', DevController.destroy);
 
 module.exports = routes;
