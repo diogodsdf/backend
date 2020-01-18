@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 const routes = require('./routes');
 
 const app = express();
@@ -14,6 +15,8 @@ mongoose.connect('mongodb+srv://diogodsdf:diogodsdf@cluster0-muur2.mongodb.net/w
   useCreateIndex: true
 });
 
+//app.use(cors({origin: 'http://localhost:300'}));
+app.use(cors());
 app.use(express.json());
 app.use(routes);
 
